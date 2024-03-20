@@ -18,6 +18,8 @@ import {
     Outlet
   } from 'react-router-dom';
 // import { clear } from '@testing-library/user-event/dist/clear';
+import { AuthProvider } from "./Context.js";
+import CartContext from './CartContext.js';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
