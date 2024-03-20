@@ -36,48 +36,48 @@ function Desktop(){
     Authorization: token
   }
   
-  useEffect(()=>{
-    getTodo();
-  },[]);
+  // useEffect(()=>{
+  //   getTodo();
+  // },[]);
 
-  function getTodo(){
-    console.log('重新取得todo')
-    axios.get(url, {headers}).then((res)=>{
-      setTodos(res.data.todos);
-    }).catch(err=>{
-      return MySwal.fire({
-        icon: 'error',
-        title: '取得失敗',
-      })
-    })
-  }
-  const logout = (e) => {
-    e.preventDefault();
+  // function getTodo(){
+  //   console.log('重新取得todo')
+  //   axios.get(url, {headers}).then((res)=>{
+  //     setTodos(res.data.todos);
+  //   }).catch(err=>{
+  //     return MySwal.fire({
+  //       icon: 'error',
+  //       title: '取得失敗',
+  //     })
+  //   })
+  // }
+  // const logout = (e) => {
+  //   e.preventDefault();
   
-    axios.delete(url, {headers}).then(res=>{
-      setToken(null);
-      navigate('/login');
-    }).catch(err=>{
-      setToken(null);
-      navigate('/login');
-    })
-  }
-  const loginoutRender = () => {
-    // todo 有值
-    // if(todos.length){
-      let todolist = [];
-      console.log(token);
-      if (token) {
-        // 全部
-        return (todolist = <Link to={"/login"} className="a1">登出</Link> )
-        // todolist = todos.map((item, i)=>{
-        //   return <Link to={"/login"} className="a1">登出</Link> 
-        // })
-      } else {
-          return  (todolist = <Link to={"/login"} className="a1">登入</Link> )
-      }
+  //   axios.delete(url, {headers}).then(res=>{
+  //     setToken(null);
+  //     navigate('/login');
+  //   }).catch(err=>{
+  //     setToken(null);
+  //     navigate('/login');
+  //   })
+  // }
+  // const loginoutRender = () => {
+  //   // todo 有值
+  //   // if(todos.length){
+  //     let todolist = [];
+  //     console.log(token);
+  //     if (token) {
+  //       // 全部
+  //       return (todolist = <Link to={"/login"} className="a1">登出</Link> )
+  //       // todolist = todos.map((item, i)=>{
+  //       //   return <Link to={"/login"} className="a1">登出</Link> 
+  //       // })
+  //     } else {
+  //         return  (todolist = <Link to={"/login"} className="a1">登入</Link> )
+  //     }
 
-  }
+  // }
   const nicknameRender = () => {
     // todo 有值
     // if(todos.length){
